@@ -1,5 +1,4 @@
--- UI gốc giữ nguyên như bạn làm ở trên...
--- Thêm nút Ultra Quality
+-- By HyuiOWO
 local ultraBtn = makeButton("Ultra Quality", 240)
 
 -- Thêm hiệu ứng nâng cao
