@@ -34,4 +34,4 @@ Một shader tuyệt đẹp cho Roblox được viết bằng Lua Script – gi�
 2. Dán đoạn loadstring sau vào LocalScript:
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/<username>/<repo>/main/shader.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/HyuiOWO/Script-Shader-Roblox-1.2/main/Shader.lua"))()
