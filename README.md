@@ -30,8 +30,7 @@ Một shader tuyệt đẹp cho Roblox được viết bằng Lua Script – gi�
 
 ## ⚙️ Cách sử dụng
 
-1. Tạo một **LocalScript** trong `StarterPlayerScripts`
-2. Dán đoạn loadstring sau vào LocalScript:
+1. Dán đoạn loadstring sau vào Client và chạy
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/HyuiOWO/Script-Shader-Roblox-1.2/main/Shader.lua"))()
