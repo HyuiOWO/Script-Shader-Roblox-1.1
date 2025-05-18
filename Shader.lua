@@ -63,7 +63,6 @@ local function SetupEffects(quality)
 
     local settings = QualitySettings[quality]
 
-    -- MotionBlur
     MotionBlur = Instance.new("BlurEffect")
     MotionBlur.Name = "MotionBlur"
     MotionBlur.Size = 0
@@ -109,7 +108,7 @@ local function SetupLighting(quality)
     Lighting.Brightness = 2.5
     Lighting.GlobalShadows = true
     Lighting.ShadowSoftness = settings.ShadowSoftness
-    Lighting.ClockTime = 16.5 -- Mặt trời lên cao hơn xíu
+    Lighting.ClockTime = 16.5
     Lighting.Ambient = Color3.fromRGB(70, 60, 80)
     Lighting.OutdoorAmbient = Color3.fromRGB(100, 90, 110)
     Lighting.FogEnd = settings.FogEnd
@@ -142,7 +141,7 @@ local function HandleCameraChange()
     end)
 end
 
--- GUI MOBILE
+-- GUI MOBILE (v1.2)
 local function CreateGui()
     local player = Players.LocalPlayer
     local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
@@ -150,8 +149,8 @@ local function CreateGui()
     gui.ResetOnSpawn = false
 
     local panel = Instance.new("Frame")
-    panel.Size = UDim2.new(0, 220, 0, 160)
-    panel.Position = UDim2.new(1, -290, 0, 10)
+    panel.Size = UDim2.new(0, 240, 0, 200)
+    panel.Position = UDim2.new(0.5, -120, 0.5, -100)
     panel.BackgroundTransparency = 0.2
     panel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     panel.BorderSizePixel = 0
@@ -163,17 +162,36 @@ local function CreateGui()
     uiLayout.SortOrder = Enum.SortOrder.LayoutOrder
     uiLayout.Padding = UDim.new(0, 6)
 
+    local title = Instance.new("TextLabel")
+    title.Size = UDim2.new(1, 0, 0, 30)
+    title.BackgroundTransparency = 1
+    title.TextColor3 = Color3.fromRGB(255, 255, 255)
+    title.Font = Enum.Font.GothamBold
+    title.TextSize = 18
+    title.Text = "Shader Customizable Visual Enhancer"
+    title.Parent = panel
+
+    local credit = Instance.new("TextLabel")
+    credit.Size = UDim2.new(1, 0, 0, 20)
+    credit.BackgroundTransparency = 1
+    credit.TextColor3 = Color3.fromRGB(200, 200, 200)
+    credit.Font = Enum.Font.Gotham
+    credit.TextSize = 14
+    credit.Text = "Cre: HyuiOWO"
+    credit.Parent = panel
+
     local function createButton(text, callback)
         local btn = Instance.new("TextButton")
         btn.Size = UDim2.new(1, -20, 0, 40)
         btn.Position = UDim2.new(0, 10, 0, 0)
-        btn.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+        btn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
         btn.TextColor3 = Color3.new(1, 1, 1)
         btn.Text = text
-        btn.Font = Enum.Font.GothamBold
+        btn.Font = Enum.Font.GothamMedium
         btn.TextSize = 16
         btn.AutoButtonColor = true
         btn.Parent = panel
+        btn.BorderSizePixel = 0
         btn.MouseButton1Click:Connect(callback)
     end
 
@@ -196,13 +214,15 @@ local function CreateGui()
     end)
 
     local openBtn = Instance.new("TextButton")
-    openBtn.Size = UDim2.new(0, 50, 0, 50)
-    openBtn.Position = UDim2.new(1, -60, 0, 10)
+    openBtn.Size = UDim2.new(0, 40, 0, 40)
+    openBtn.Position = UDim2.new(1, -50, 0, 10)
     openBtn.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
     openBtn.Text = "☰"
     openBtn.TextColor3 = Color3.new(1, 1, 1)
-    openBtn.TextSize = 24
+    openBtn.TextSize = 22
+    openBtn.Font = Enum.Font.GothamBold
     openBtn.Parent = gui
+    openBtn.BorderSizePixel = 0
 
     openBtn.MouseButton1Click:Connect(function()
         panel.Visible = not panel.Visible
